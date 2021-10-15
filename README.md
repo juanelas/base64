@@ -5,7 +5,7 @@
 
 # @juanelas/base64
 
-Base64 for both node.js and brwser javascript. It support URL-safe encoding and enabling/disabling padding. Buffers can be implementedd using ArrayBuffer, any TypedArray or Buffer
+Base64 for both node.js and brwser javascript. It support URL-safe encoding and enabling/disabling padding. Buffers can be implementedd using ArrayBuffer, any TypedArray or Buffer.
 
 ## Usage
 
@@ -29,7 +29,7 @@ import * as base64 from '@juanelas/base64'
 
 The appropriate version for browser or node is automatically exported. Types for TypeScript users are also provided.
 
-You can also download the [IIFE bundle](https://raw.githubusercontent.com/juanelas/base64/master/dist/bundles/iife.js), the [ESM bundle](https://raw.githubusercontent.com/juanelas/base64/master/dist/bundles/esm.js) or the [UMD bundle](https://raw.githubusercontent.com/juanelas/base64/master/dist/bundles/umd.js) and manually add it to your project, or, if you have already installed `@juanelas/base64` in your project, just get the bundles from `node_modules/@juanelas/base64/dist/bundles/`.
+You can also download the [IIFE bundle](https://raw.githubusercontent.com/juanelas/base64/master/dist/bundles/iife.js), the [ESM bundle](https://raw.githubusercontent.com/juanelas/base64/master/dist/bundles/esm.min.js) or the [UMD bundle](https://raw.githubusercontent.com/juanelas/base64/master/dist/bundles/umd.js) and manually add it to your project, or, if you have already installed `@juanelas/base64` in your project, just get the bundles from `node_modules/@juanelas/base64/dist/bundles/`.
 
 An example of usage could be:
 

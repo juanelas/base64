@@ -29,7 +29,7 @@
       },
       "default": "./dist/esm/index.browser.js"
     },
-    "./esm-browser-bundle": "./dist/bundles/esm.js",
+    "./esm-browser-bundle": "./dist/bundles/esm.min.js",
     "./iife-browser-bundle": "./dist/bundles/iife.js",
     "./umd-browser-bundle": "./dist/bundles/umd.js",
     "./types": "./types/index.d.ts"
