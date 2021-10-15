@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-
+    name: multiplatform builds
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -21,29 +21,49 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v2
+    - if: matrix.os != 'ubuntu-latest' || matrix.node-version != '14.x'
+      uses: actions/checkout@v2
 
-    - name: Use Node.js ${{ matrix.node-version }}
+    - if: matrix.os != 'ubuntu-latest' || matrix.node-version != '14.x'
+      name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     
+    - if: matrix.os != 'ubuntu-latest' || matrix.node-version != '14.x'
+      run: npm ci
+    
+    - if: matrix.os != 'ubuntu-latest' || matrix.node-version != '14.x'
+      run: npm run build --if-present
+
+  publish:
+    name: publish if version has changed
+    needs: build
+    runs-on: ubuntu-latest
+  
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Use Node.js 14.x
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14.x
+    
     - run: npm ci
     
     - run: npm run build --if-present
-    
-    - if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
-      uses: EndBug/version-check@v1
+
+    - uses: EndBug/version-check@v1
       id: check
     
-    - if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x' && steps.check.outputs.changed == 'true'
+    - if: steps.check.outputs.changed == 'true'
       name: send report to coveralls.io
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
     
-    - if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x' && steps.check.outputs.changed == 'true'
+    - if: steps.check.outputs.changed == 'true'
       run: npm publish
       env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
