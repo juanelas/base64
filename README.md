@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![Node CI](https://github.com/juanelas/base64/workflows/Node%20CI/badge.svg)](https://github.com/juanelas/base64/actions?query=workflow%3A%22Node+CI%22)
+[![Node CI](https://github.com/juanelas/base64/workflows/Node.js%20CI/badge.svg)](https://github.com/juanelas/base64/actions?query=workflow%3A%22Node.js+CI%22)
 [![Coverage Status](https://coveralls.io/repos/github/juanelas/base64/badge.svg?branch=master)](https://coveralls.io/github/juanelas/base64?branch=master)
 
 # @juanelas/base64
