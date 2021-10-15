@@ -1,46 +1,47 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Node CI](https://github.com/juanelas/base64/workflows/Node%20CI/badge.svg)](https://github.com/juanelas/base64/actions?query=workflow%3A%22Node+CI%22)
+[![Coverage Status](https://coveralls.io/repos/github/juanelas/base64/badge.svg?branch=master)](https://coveralls.io/github/juanelas/base64?branch=master)
 
+# @juanelas/base64
 
-# @juanelas/base64url
-
-Your package description
+Base64 for both node.js and brwser javascript. It support URL-safe encoding and enabling/disabling padding. Buffers can be implementedd using ArrayBuffer, any TypedArray or Buffer
 
 ## Usage
 
-`@juanelas/base64url` can be imported to your project with `npm`:
+`@juanelas/base64` can be imported to your project with `npm`:
 
 ```console
-npm install @juanelas/base64url
+npm install @juanelas/base64
 ```
 
 Then either require (Node.js CJS):
 
 ```javascript
-const base64url = require('@juanelas/base64url')
+const base64 = require('@juanelas/base64')
 ```
 
 or import (JavaScript ES module):
 
 ```javascript
-import * as base64url from '@juanelas/base64url'
+import * as base64 from '@juanelas/base64'
 ```
 
 The appropriate version for browser or node is automatically exported. Types for TypeScript users are also provided.
 
-You can also download the IIFE bundle, the ESM bundle or the UMD bundle and manually add it to your project, or, if you have already installed `@juanelas/base64url` in your project, just get the bundles from `node_modules/@juanelas/base64url/dist/bundles/`.
+You can also download the [IIFE bundle](https://raw.githubusercontent.com/juanelas/base64/master/dist/bundles/iife.js), the [ESM bundle](https://raw.githubusercontent.com/juanelas/base64/master/dist/bundles/esm.js) or the [UMD bundle](https://raw.githubusercontent.com/juanelas/base64/master/dist/bundles/umd.js) and manually add it to your project, or, if you have already installed `@juanelas/base64` in your project, just get the bundles from `node_modules/@juanelas/base64/dist/bundles/`.
 
 An example of usage could be:
 
 ```typescript
-import * as base64url from '@juanelas/base64url'
+import * as base64 from '@juanelas/base64'
 
 const buf = new Uint8Array([254, 1, 128, 255])
-const base64str = base64url.encode(buf, true, false) // URL-safe base64 with no padding
+const base64str = base64.encode(buf, true, false) // URL-safe base64 with no padding
 
 console.log(base64str) // Outputs: '_gGA_w'
 
-const buf2 = base64url.decode(base64str) // URL-safe encdoing and padding are automatically detected
+const buf2 = base64.decode(base64str) // URL-safe encdoing and padding are automatically detected
 
 console.log(buf2.toString()) // Outputs: '254,1,128,255'
 

@@ -4,7 +4,7 @@
 
 # {{PKG_NAME}}
 
-Your package description
+Base64 for both node.js and brwser javascript. It support URL-safe encoding and enabling/disabling padding. Buffers can be implementedd using ArrayBuffer, any TypedArray or Buffer
 
 ## Usage
 

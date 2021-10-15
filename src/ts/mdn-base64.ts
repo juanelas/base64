@@ -1,10 +1,4 @@
 /**
- * Base64 / binary data / UTF-8 strings utilities
- * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Base64_encoding_and_decoding
-*
- */
-
-/**
  * Array of bytes to Base64 string decoding
  * @param sBase64 - a base64-encoded string
  * @returns

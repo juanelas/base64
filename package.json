@@ -1,17 +1,22 @@
 {
   "name": "@juanelas/base64",
   "version": "0.9.4",
-  "description": "Base64url for both node.js and brwser javascript. It can work with ArrayBuffer|TypedArray|Buffer",
+  "description": "Base64 for both node.js and brwser javascript. It support URL-safe encoding and enabling/disabling padding. Buffers can be implementedd using ArrayBuffer, any TypedArray or Buffer",
   "keywords": [
     "base64",
-    "base64url"
+    "base64url",
+    "Buffer",
+    "ArrayBuffer",
+    "TypedArray",
+    "Uint8Array"
   ],
   "license": "MIT",
   "author": {
     "name": "Juan Hernández Serrano",
-    "email": "j.hernandez@upc.edu"
+    "email": "j.hernandez@upc.edu",
+    "url": "https://github.com/juanelas"
   },
-  "repository": "repoprovider:username/my-package-name",
+  "repository": "github:juanelas/base64",
   "types": "./types/index.d.ts",
   "main": "./dist/cjs/index.node.cjs",
   "browser": "./dist/esm/index.browser.js",
