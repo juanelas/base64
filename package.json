@@ -1,6 +1,6 @@
 {
   "name": "@juanelas/base64",
-  "version": "0.9.4",
+  "version": "1.0.0",
   "description": "Base64 for both node.js and brwser javascript. It support URL-safe encoding and enabling/disabling padding. Buffers can be implementedd using ArrayBuffer, any TypedArray or Buffer",
   "keywords": [
     "base64",
