@@ -9,6 +9,7 @@ on:
 
 jobs:
   build:
+    name: build and test
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -48,13 +49,13 @@ jobs:
         run: npm run coverage
 
       - name: send report to coveralls.io
-        if: steps.check.outputs.changed == 'true' && matrix.os == ubuntu-latest && matrix.node == 14
+        if: steps.check.outputs.changed == 'true' && matrix.os == 'ubuntu-latest' && matrix.node == 14
         uses: coverallsapp/github-action@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: publish to NPM
-        if: steps.check.outputs.changed == 'true' && matrix.os == ubuntu-latest && matrix.node == 14
+        if: steps.check.outputs.changed == 'true' && matrix.os == 'ubuntu-latest' && matrix.node == 14
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
