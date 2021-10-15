@@ -22,16 +22,27 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    
     - run: npm ci
+    
     - run: npm run build --if-present
+    
     - if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x'
       uses: EndBug/version-check@v1
       id: check
+    
+    - if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x' && steps.check.outputs.changed == 'true'
+      name: send report to coveralls.io
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+    
     - if: matrix.os == 'ubuntu-latest' && matrix.node-version == '14.x' && steps.check.outputs.changed == 'true'
       run: npm publish
       env:
