@@ -1,4 +1,4 @@
-# @juanelas/base64 - v1.0.1
+# @juanelas/base64 - v1.0.2
 
 Base64url for both node.js and brwser javascript. It can work with ArrayBuffer|TypedArray|Buffer
 
@@ -25,7 +25,7 @@ A TypedArray object describes an array-like view of an underlying binary data bu
 
 #### Defined in
 
-[index.ts:13](https://github.com/juanelas/base64/blob/86b77d9/src/ts/index.ts#L13)
+[index.ts:13](https://github.com/juanelas/base64/blob/66c7b15/src/ts/index.ts#L13)
 
 ## Functions
 
@@ -50,7 +50,7 @@ a buffer or unicode string
 
 #### Defined in
 
-[index.ts:46](https://github.com/juanelas/base64/blob/86b77d9/src/ts/index.ts#L46)
+[index.ts:46](https://github.com/juanelas/base64/blob/66c7b15/src/ts/index.ts#L46)
 
 ___
 
@@ -76,4 +76,4 @@ a string with the base64-encoded representation of the input
 
 #### Defined in
 
-[index.ts:22](https://github.com/juanelas/base64/blob/86b77d9/src/ts/index.ts#L22)
+[index.ts:22](https://github.com/juanelas/base64/blob/66c7b15/src/ts/index.ts#L22)
