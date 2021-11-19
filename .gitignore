@@ -15,6 +15,3 @@ coverage
 
 # Test temporal files
 .mocha-ts
-
-# VSCode
-.vscode

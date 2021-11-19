@@ -32,7 +32,8 @@ if (existsSync(input) !== true) throw new Error('The entry point should be index
 const tsBundleOptions = {
   tsconfig: join(rootDir, 'tsconfig.json'),
   outDir: undefined, // ignore outDir in tsconfig.json
-  exclude: ['test/**/*', 'src/**/*.spec.ts', './build/typings/global-this-pkg.d.ts']
+  include: ['src/ts/**/*', 'build/typings/**/*'],
+  exclude: ['src/**/*.spec.ts', './build/typings/global-this-pkg.d.ts']
 }
 
 const external = [...Object.keys(dependencies || {}), ...Object.keys(peerDependencies || {})]
@@ -125,7 +126,8 @@ export default [
       {
         file: join(rootDir, exports['.'].node.require),
         ...sourcemapOutputOptions,
-        format: 'cjs'
+        format: 'cjs',
+        exports: 'auto'
       },
       {
         file: join(rootDir, exports['.'].node.import),

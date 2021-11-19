@@ -34,7 +34,7 @@ module.exports = class TestsBuilder extends Builder {
          - Our specific build typings
          - The test files
       */
-      config.include = ['node_modules/**/*.d.ts', 'build/typings/**/*', 'test/**/*', 'src/ts/**/*.spec.ts']
+      config.include = ['node_modules/**/*.d.ts', 'build/typings/**/*.d.ts', 'test/**/*.ts', 'src/ts/**/*.spec.ts']
 
       // no excluded files
       config.exclude = undefined
@@ -88,7 +88,6 @@ module.exports = class TestsBuilder extends Builder {
         rootDir,
         outDir: this.tempDir,
         noEmit: false,
-        noResolve: true,
         sourceMap: true
       },
       ts.sys,

@@ -1,11 +1,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![Node CI](https://github.com/juanelas/base64/workflows/Node.js%20CI/badge.svg)](https://github.com/juanelas/base64/actions?query=workflow%3A%22Node.js+CI%22)
+[![Node.js CI](https://github.com/juanelas/base64/workflows/Node.js%20CI/badge.svg)](https://github.com/juanelas/base64/actions?query=workflow%3A%22Node.js+CI%22)
 [![Coverage Status](https://coveralls.io/repos/github/juanelas/base64/badge.svg?branch=master)](https://coveralls.io/github/juanelas/base64?branch=master)
 
 # @juanelas/base64
 
-Base64 for both node.js and brwser javascript. It support URL-safe encoding and enabling/disabling padding. Buffers can be implementedd using ArrayBuffer, any TypedArray or Buffer.
+Base64 for both node.js and browser javascript. It supports URL-safe encoding and enabling/disabling padding. Buffers can be implementedd using ArrayBuffer, any TypedArray, or Buffer.
 
 ## Usage
 
@@ -41,16 +41,16 @@ const base64str = base64.encode(buf, true, false) // URL-safe base64 with no pad
 
 console.log(base64str) // Outputs: '_gGA_w'
 
-const buf2 = base64.decode(base64str) // URL-safe encdoing and padding are automatically detected
+const buf2 = base64.decode(base64str) // URL-safe encoding and padding are automatically detected
 
 console.log(buf2.toString()) // Outputs: '254,1,128,255'
 
 const text = 'fooba'
-const base64str = base64url.encode(text) // Standard base64 with padding
+const base64str2 = base64.encode(text) // Standard base64 with padding
 
-console.log(base64str) // Outputs: 'Zm9vYmE='
+console.log(base64str2) // Outputs: 'Zm9vYmE='
 
-const text2 = base64url.decode(base64str, true) // Output to unicode string instead of Uint8Array
+const text2 = base64.decode(base64str2, true) // Output to unicode string instead of Uint8Array
 
 console.log(text2) // Outputs: 'fooba'
 

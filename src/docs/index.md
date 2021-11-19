@@ -4,7 +4,7 @@
 
 # {{PKG_NAME}}
 
-Base64 for both node.js and brwser javascript. It support URL-safe encoding and enabling/disabling padding. Buffers can be implementedd using ArrayBuffer, any TypedArray or Buffer.
+Base64 for both node.js and browser javascript. It supports URL-safe encoding and enabling/disabling padding. Buffers can be implementedd using ArrayBuffer, any TypedArray, or Buffer.
 
 ## Usage
 
@@ -40,16 +40,16 @@ const base64str = {{PKG_CAMELCASE}}.encode(buf, true, false) // URL-safe base64 
 
 console.log(base64str) // Outputs: '_gGA_w'
 
-const buf2 = {{PKG_CAMELCASE}}.decode(base64str) // URL-safe encdoing and padding are automatically detected
+const buf2 = {{PKG_CAMELCASE}}.decode(base64str) // URL-safe encoding and padding are automatically detected
 
 console.log(buf2.toString()) // Outputs: '254,1,128,255'
 
 const text = 'fooba'
-const base64str = base64url.encode(text) // Standard base64 with padding
+const base64str2 = {{PKG_CAMELCASE}}.encode(text) // Standard base64 with padding
 
-console.log(base64str) // Outputs: 'Zm9vYmE='
+console.log(base64str2) // Outputs: 'Zm9vYmE='
 
-const text2 = base64url.decode(base64str, true) // Output to unicode string instead of Uint8Array
+const text2 = {{PKG_CAMELCASE}}.decode(base64str2, true) // Output to unicode string instead of Uint8Array
 
 console.log(text2) // Outputs: 'fooba'
 

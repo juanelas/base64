@@ -1,6 +1,7 @@
-import { readFileSync, writeFileSync } from 'fs'
+import { mkdirSync, readFileSync, writeFileSync } from 'fs'
 import ts from 'typescript'
 import { join, dirname } from 'path'
+import { sync } from 'rimraf'
 
 const { readJsonConfigFile, sys, parseJsonSourceFileConfigFileContent, createCompilerHost, createProgram } = ts
 
@@ -28,11 +29,13 @@ const compilerOptions = {
 const host = createCompilerHost(compilerOptions)
 
 host.writeFile = (fileName, contents) => {
-  sys.createDirectory(dirname(fileName))
+  mkdirSync(dirname(fileName), { recursive: true })
   writeFileSync(fileName, contents)
 }
 
 export const compile = () => {
+  // Clear the types dir
+  sync(outDir)
   // Prepare and emit the d.ts files
   const program = createProgram([srcFile], compilerOptions, host)
   program.emit()
