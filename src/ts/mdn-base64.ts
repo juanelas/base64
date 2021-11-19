@@ -31,7 +31,7 @@ export function base64EncArr (aBytes: Uint8Array): string {
   let nMod3 = 2
   let sB64Enc = ''
 
-  for (var nLen = aBytes.length, nUint24 = 0, nIdx = 0; nIdx < nLen; nIdx++) {
+  for (let nLen = aBytes.length, nUint24 = 0, nIdx = 0; nIdx < nLen; nIdx++) {
     nMod3 = nIdx % 3
     if (nIdx > 0 && (nIdx * 4 / 3) % 76 === 0) { sB64Enc += '\r\n' }
     nUint24 |= aBytes[nIdx] << (16 >>> nMod3 & 24)
