@@ -1,7 +1,7 @@
 /**
  * Base64url for both node.js and brwser javascript. It can work with ArrayBuffer|TypedArray|Buffer
  *
- * @remarks Bowser code by https://developer.mozilla.org/en-US/docs/Web/JavaScript/Base64_encoding_and_decoding
+ * @remarks Bowser code obtained from https://github.com/panva/jose/blob/main/src/runtime/browser/base64url.ts
  * @packageDocumentation
  */
 /// <reference types="node" />

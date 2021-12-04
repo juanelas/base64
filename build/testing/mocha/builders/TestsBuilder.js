@@ -39,6 +39,9 @@ module.exports = class TestsBuilder extends Builder {
       // no excluded files
       config.exclude = undefined
 
+      // "noResolve": true
+      config.compilerOptions.noResolve = true
+
       // we don't need declaration files
       config.compilerOptions.declaration = false
 

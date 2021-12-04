@@ -34,3 +34,6 @@ src/docs
 
 # Test temporal files
 .mocha-ts
+
+# docs temporal files
+.nojekyll

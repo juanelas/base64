@@ -40,7 +40,7 @@ const indexHtml = `<!DOCTYPE html>
     </script>
     <script type="module">
       import * as _pkg from './${name}.esm.js'
-      self._pkg = (_pkg.default !== undefined) ? _pkg.default : _pkg
+      self._pkg = _pkg
     </script>
     <script type="module">
       import './tests.js'
@@ -51,7 +51,7 @@ const indexHtml = `<!DOCTYPE html>
 const tsBundleOptions = {
   tsconfig: path.join(rootDir, 'tsconfig.json'),
   outDir: undefined, // ignore outDir in tsconfig.json
-  exclude: ['test-vectors/**/*', './build/typings/global-this-pkg.d.ts']
+  exclude: ['test-vectors/**/*']
 }
 
 async function buildTests () {

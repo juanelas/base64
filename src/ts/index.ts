@@ -1,11 +1,11 @@
 /**
  * Base64url for both node.js and brwser javascript. It can work with ArrayBuffer|TypedArray|Buffer
  *
- * @remarks Bowser code by https://developer.mozilla.org/en-US/docs/Web/JavaScript/Base64_encoding_and_decoding
+ * @remarks Bowser code obtained from https://github.com/panva/jose/blob/main/src/runtime/browser/base64url.ts
  * @packageDocumentation
  */
 
-import { base64EncArr, base64DecToArr } from './mdn-base64'
+import { base64Encode, base64Decode } from './browser-base64'
 
 /**
  * A TypedArray object describes an array-like view of an underlying binary data buffer.
@@ -25,7 +25,7 @@ export function encode (input: ArrayBuffer|TypedArray|Buffer|string, urlsafe: bo
     const bytes = (typeof input === 'string')
       ? (new TextEncoder()).encode(input)
       : new Uint8Array(input)
-    base64 = base64EncArr(bytes)
+    base64 = base64Encode(bytes)
   } else {
     const bytes = (typeof input === 'string')
       ? Buffer.from(input, 'utf8')
@@ -52,7 +52,7 @@ export function decode (base64: string, stringOutput: boolean = false): Uint8Arr
       throw new Error('Not a valid base64 input')
     }
     if (urlsafe) base64 = base64urlToBase64(base64)
-    const bytes = base64DecToArr(base64)
+    const bytes = base64Decode(base64)
     return stringOutput
       ? (new TextDecoder()).decode(bytes)
       : bytes

@@ -7,10 +7,34 @@ describe('base64url testing', function () {
       padding: true
     },
     {
+      binary: new Uint8Array([0, 123]),
+      base64: 'AHs=',
+      urlsafe: false,
+      padding: true
+    },
+    {
+      binary: new Uint8Array([0, 123]),
+      base64: 'AHs',
+      urlsafe: true,
+      padding: false
+    },
+    {
       binary: new Uint8Array([102]),
       base64: 'Zg==',
       urlsafe: false,
       padding: true
+    },
+    {
+      binary: new Uint8Array([0, 123, 192, 255]),
+      base64: 'AHvA/w==',
+      urlsafe: false,
+      padding: true
+    },
+    {
+      binary: new Uint8Array([0, 123, 192, 255]),
+      base64: 'AHvA_w',
+      urlsafe: true,
+      padding: false
     },
     {
       binary: new Uint8Array([102, 111, 111, 98, 97, 114]),
