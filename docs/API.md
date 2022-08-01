@@ -2,11 +2,13 @@
 
 Base64url for both node.js and brwser javascript. It can work with ArrayBuffer|TypedArray|Buffer
 
-**`remarks`** Bowser code obtained from https://github.com/panva/jose/blob/main/src/runtime/browser/base64url.ts
+**`Remarks`**
+
+Bowser code obtained from https://github.com/panva/jose/blob/main/src/runtime/browser/base64url.ts
 
 ## Table of contents
 
-### Type aliases
+### Type Aliases
 
 - [TypedArray](API.md#typedarray)
 
@@ -15,7 +17,7 @@ Base64url for both node.js and brwser javascript. It can work with ArrayBuffer|T
 - [decode](API.md#decode)
 - [encode](API.md#encode)
 
-## Type aliases
+## Type Aliases
 
 ### TypedArray
 
@@ -25,7 +27,7 @@ A TypedArray object describes an array-like view of an underlying binary data bu
 
 #### Defined in
 
-[index.ts:13](https://github.com/juanelas/base64/blob/f6bbc77/src/ts/index.ts#L13)
+[index.ts:13](https://github.com/juanelas/base64/blob/05161d2/src/ts/index.ts#L13)
 
 ## Functions
 
@@ -50,7 +52,7 @@ a buffer or unicode string
 
 #### Defined in
 
-[index.ts:46](https://github.com/juanelas/base64/blob/f6bbc77/src/ts/index.ts#L46)
+[index.ts:46](https://github.com/juanelas/base64/blob/05161d2/src/ts/index.ts#L46)
 
 ___
 
@@ -64,7 +66,7 @@ Base64Url encoding of a buffer input or a string (UTF16 in browsers, UTF8 in nod
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `input` | `string` \| `ArrayBuffer` \| [`TypedArray`](API.md#typedarray) \| `Buffer` | `undefined` |  |
+| `input` | `string` \| [`TypedArray`](API.md#typedarray) \| `ArrayBuffer` \| `Buffer` | `undefined` |  |
 | `urlsafe` | `boolean` | `false` | if true Base64 URL encoding is used ('+' and '/' are replaced by '-', '_') |
 | `padding` | `boolean` | `true` | if false, padding (trailing '=') is removed |
 
@@ -76,4 +78,4 @@ a string with the base64-encoded representation of the input
 
 #### Defined in
 
-[index.ts:22](https://github.com/juanelas/base64/blob/f6bbc77/src/ts/index.ts#L22)
+[index.ts:22](https://github.com/juanelas/base64/blob/05161d2/src/ts/index.ts#L22)
