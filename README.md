@@ -1,8 +1,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![Node.js CI](https://github.com/juanelas/base64/workflows/build/badge.svg)](https://github.com/juanelas/base64/actions?query=workflow%3A%22build%22)
-[![Coverage Status](https://coveralls.io/repos/github/juanelas/base64/badge.svg?branch=master)](https://coveralls.io/github/juanelas/base64?branch=master)
+[![Node.js CI](https://github.com/juanelas/base64/actions/workflows/build-and-test.yml/badge.svg)](https://github.com/juanelas/base64/actions/workflows/build-and-test.yml)
+[![Coverage Status](https://coveralls.io/repos/github/juanelas/base64/badge.svg?branch=main)](https://coveralls.io/github/juanelas/base64?branch=main)
 
 # @juanelas/base64
 
@@ -30,7 +30,7 @@ import * as base64 from '@juanelas/base64'
 
 The appropriate version for browser or node is automatically exported. Types for TypeScript users are also provided.
 
-You can also download the [IIFE bundle](https://raw.githubusercontent.com/juanelas/base64/master/dist/bundles/iife.js), the [ESM bundle](https://raw.githubusercontent.com/juanelas/base64/master/dist/bundles/esm.min.js) or the [UMD bundle](https://raw.githubusercontent.com/juanelas/base64/master/dist/bundles/umd.js) and manually add it to your project, or, if you have already installed `@juanelas/base64` in your project, just get the bundles from `node_modules/@juanelas/base64/dist/bundles/`.
+You can also download the [IIFE bundle](https://raw.githubusercontent.com/juanelas/base64/main/dist/bundles/iife.js), the [ESM bundle](https://raw.githubusercontent.com/juanelas/base64/main/dist/bundles/esm.min.js) or the [UMD bundle](https://raw.githubusercontent.com/juanelas/base64/main/dist/bundles/umd.js) and manually add it to your project, or, if you have already installed `@juanelas/base64` in your project, just get the bundles from `node_modules/@juanelas/base64/dist/bundles/`.
 
 An example of usage could be:
 

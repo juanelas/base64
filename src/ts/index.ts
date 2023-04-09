@@ -19,7 +19,7 @@ export type TypedArray = Int8Array | Uint8Array | Uint8ClampedArray | Int16Array
  * @param padding - if false, padding (trailing '=') is removed
  * @returns a string with the base64-encoded representation of the input
  */
-export function encode (input: ArrayBuffer|TypedArray|Buffer|string, urlsafe: boolean = false, padding: boolean = true): string {
+export function encode (input: ArrayBuffer | TypedArray | Buffer | string, urlsafe: boolean = false, padding: boolean = true): string {
   let base64 = ''
   if (IS_BROWSER) {
     const bytes = (typeof input === 'string')
@@ -43,7 +43,7 @@ export function encode (input: ArrayBuffer|TypedArray|Buffer|string, urlsafe: bo
  * @param stringOutput - if true a UTF16 (browser) or UTF8 (node) string is returned
  * @returns a buffer or unicode string
  */
-export function decode (base64: string, stringOutput: boolean = false): Uint8Array|string {
+export function decode (base64: string, stringOutput: boolean = false): Uint8Array | string {
   if (IS_BROWSER) {
     let urlsafe = false
     if (/^[0-9a-zA-Z_-]+={0,2}$/.test(base64)) {

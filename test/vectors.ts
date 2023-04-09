@@ -1,3 +1,5 @@
+import * as _pkg from '#pkg'
+
 describe('base64url testing', function () {
   const vectors = [
     {
