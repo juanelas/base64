@@ -5,7 +5,7 @@
  * @packageDocumentation
  */
 
-import { base64Encode, base64Decode } from './browser-base64'
+import { base64Encode, base64Decode } from './browser-base64.js'
 
 /**
  * A TypedArray object describes an array-like view of an underlying binary data buffer.
