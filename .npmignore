@@ -3,7 +3,9 @@ build
 
 # Test files
 test
+__tests__
 **/*.spec.ts
+test-vectors
 
 # Logs
 logs
@@ -19,8 +21,7 @@ npm-debug.log*
 # IntelliJ
 .idea
 
-# MYC output
-.nyc_output
+# Coverage
 coverage
 
 # GitHub
@@ -38,13 +39,21 @@ src/docs
 
 # Environment files
 *.env
+*.env.*
 
 # Test temporal files
 .mocha-ts
 .tsconfig.json
+.types
 
 # docs temporal files
 .nojekyll
 
 # code of conduct
 CODE_OF_CONDUCT.md
+
+# TODO
+TO-DO.txt
+
+# benchmark
+benchmark
