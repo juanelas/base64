@@ -30,7 +30,7 @@ import * as base64 from '@juanelas/base64'
 
 The appropriate version for browser or node is automatically exported. Types for TypeScript users are also provided.
 
-You can also download the [IIFE bundle](https://raw.githubusercontent.com/juanelas/base64/main/dist/bundles/iife.js), the [ESM bundle](https://raw.githubusercontent.com/juanelas/base64/main/dist/bundles/esm.min.js) or the [UMD bundle](https://raw.githubusercontent.com/juanelas/base64/main/dist/bundles/umd.js) and manually add it to your project, or, if you have already installed `@juanelas/base64` in your project, just get the bundles from `node_modules/@juanelas/base64/dist/bundles/`.
+You can also download the [IIFE bundle](https://raw.githubusercontent.com/juanelas/base64/main/dist/bundle.iife.js), the [ESM bundle](https://raw.githubusercontent.com/juanelas/base64/main/dist/bundle.esm.min.js) or the [UMD bundle](https://raw.githubusercontent.com/juanelas/base64/main/dist/bundle.umd.js) and manually add it to your project, or, if you have already installed `@juanelas/base64` in your project, just get the bundles from `node_modules/@juanelas/base64/dist/bundles/`.
 
 An example of usage could be:
 

@@ -27,7 +27,7 @@ A TypedArray object describes an array-like view of an underlying binary data bu
 
 #### Defined in
 
-[index.ts:13](https://github.com/juanelas/base64/blob/618c9a2/src/ts/index.ts#L13)
+[index.ts:13](https://github.com/juanelas/base64/blob/c048808/src/ts/index.ts#L13)
 
 ## Functions
 
@@ -52,7 +52,7 @@ a buffer or unicode string
 
 #### Defined in
 
-[index.ts:46](https://github.com/juanelas/base64/blob/618c9a2/src/ts/index.ts#L46)
+[index.ts:46](https://github.com/juanelas/base64/blob/c048808/src/ts/index.ts#L46)
 
 ___
 
@@ -78,4 +78,4 @@ a string with the base64-encoded representation of the input
 
 #### Defined in
 
-[index.ts:22](https://github.com/juanelas/base64/blob/618c9a2/src/ts/index.ts#L22)
+[index.ts:22](https://github.com/juanelas/base64/blob/c048808/src/ts/index.ts#L22)
