@@ -1,4 +1,4 @@
-# @juanelas/base64 - v1.1.2
+# @juanelas/base64 - v1.1.3
 
 Base64url for both node.js and brwser javascript. It can work with ArrayBuffer|TypedArray|Buffer
 
