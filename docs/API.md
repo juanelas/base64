@@ -25,34 +25,65 @@ Bowser code obtained from https://github.com/panva/jose/blob/main/src/runtime/br
 
 A TypedArray object describes an array-like view of an underlying binary data buffer.
 
-#### Defined in
-
-[index.ts:13](https://github.com/juanelas/base64/blob/ad85383/src/ts/index.ts#L13)
-
 ## Functions
 
 ### decode
 
-▸ **decode**(`base64`, `stringOutput?`): `Uint8Array` \| `string`
+▸ **decode**(`base64`, `stringOutput`): `Uint8Array`
 
 Base64url decoding (binary output) of base64url-encoded string
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `base64` | `string` | `undefined` | a base64 string |
-| `stringOutput` | `boolean` | `false` | if true a UTF16 (browser) or UTF8 (node) string is returned |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `base64` | `string` | a base64 string |
+| `stringOutput` | `undefined` | if true a UTF16 (browser) or UTF8 (node) string is returned |
+
+#### Returns
+
+`Uint8Array`
+
+a buffer or unicode string
+
+▸ **decode**(`base64`, `stringOutput`): `Uint8Array`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `base64` | `string` |
+| `stringOutput` | ``false`` |
+
+#### Returns
+
+`Uint8Array`
+
+▸ **decode**(`base64`, `stringOutput`): `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `base64` | `string` |
+| `stringOutput` | ``true`` |
+
+#### Returns
+
+`string`
+
+▸ **decode**(`base64`, `stringOutput`): `Uint8Array` \| `string`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `base64` | `string` |
+| `stringOutput` | `boolean` |
 
 #### Returns
 
 `Uint8Array` \| `string`
-
-a buffer or unicode string
-
-#### Defined in
-
-[index.ts:46](https://github.com/juanelas/base64/blob/ad85383/src/ts/index.ts#L46)
 
 ___
 
@@ -66,7 +97,7 @@ Base64Url encoding of a buffer input or a string (UTF16 in browsers, UTF8 in nod
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `input` | `string` \| [`TypedArray`](API.md#typedarray) \| `ArrayBuffer` \| `Buffer` | `undefined` |  |
+| `input` | `string` \| [`TypedArray`](API.md#typedarray) \| `ArrayBufferLike` \| `Buffer` | `undefined` |  |
 | `urlsafe` | `boolean` | `false` | if true Base64 URL encoding is used ('+' and '/' are replaced by '-', '_') |
 | `padding` | `boolean` | `true` | if false, padding (trailing '=') is removed |
 
@@ -75,7 +106,3 @@ Base64Url encoding of a buffer input or a string (UTF16 in browsers, UTF8 in nod
 `string`
 
 a string with the base64-encoded representation of the input
-
-#### Defined in
-
-[index.ts:22](https://github.com/juanelas/base64/blob/ad85383/src/ts/index.ts#L22)

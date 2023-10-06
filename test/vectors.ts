@@ -78,7 +78,7 @@ describe('base64url testing', function () {
     })
     describe(`decode('${vector.base64}')`, function () {
       it(`should return ${vector.binary.toString()}`, function () {
-        const ret = _pkg.decode(vector.base64, typeof vector.binary === 'string' || undefined)
+        const ret = _pkg.decode(vector.base64, typeof vector.binary === 'string')
         chai.expect(ret.toString()).to.equal(vector.binary.toString())
       })
     })
