@@ -43,6 +43,7 @@ export function encode (input: ArrayBufferLike | TypedArray | Buffer | string, u
  * @param stringOutput - if true a UTF16 (browser) or UTF8 (node) string is returned
  * @returns a buffer or unicode string
  */
+export function decode (base64: string): Uint8Array
 export function decode (base64: string, stringOutput: undefined): Uint8Array
 export function decode (base64: string, stringOutput: false): Uint8Array
 export function decode (base64: string, stringOutput: true): string

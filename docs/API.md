@@ -29,7 +29,7 @@ A TypedArray object describes an array-like view of an underlying binary data bu
 
 ### decode
 
-▸ **decode**(`base64`, `stringOutput`): `Uint8Array`
+▸ **decode**(`base64`): `Uint8Array`
 
 Base64url decoding (binary output) of base64url-encoded string
 
@@ -38,13 +38,25 @@ Base64url decoding (binary output) of base64url-encoded string
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `base64` | `string` | a base64 string |
-| `stringOutput` | `undefined` | if true a UTF16 (browser) or UTF8 (node) string is returned |
 
 #### Returns
 
 `Uint8Array`
 
 a buffer or unicode string
+
+▸ **decode**(`base64`, `stringOutput`): `Uint8Array`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `base64` | `string` |
+| `stringOutput` | `undefined` |
+
+#### Returns
+
+`Uint8Array`
 
 ▸ **decode**(`base64`, `stringOutput`): `Uint8Array`
 
