@@ -54,3 +54,4 @@ function removeBase64Padding(str) {
 }
 
 export { decode, encode };
+//# sourceMappingURL=bundle.js.map

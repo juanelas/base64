@@ -38,10 +38,10 @@ class RollupBuilder extends Builder {
       const file = (bundle.output[0].dir !== undefined)
         ? path.join(bundle.output[0].dir, bundle.output[0].entryFileNames)
         : bundle.output[0].file
-      if (file === watchedModuleAbsPath) {
-        bundle.output[0].sourcemap = 'inline'
-        bundle.output[0].sourcemapExcludeSources = true
-      }
+      // if (file === watchedModuleAbsPath) {
+      //   bundle.output[0].sourcemap = 'inline'
+      //   bundle.output[0].sourcemapExcludeSources = true
+      // }
       return (file === watchedModuleAbsPath) || (file === dtsAbsPath)
     })
 

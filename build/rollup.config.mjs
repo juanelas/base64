@@ -76,9 +76,9 @@ export default [
       {
         file: join(rootDir, pkgJson.exports['.'].default.default),
         format: 'es',
-        sourcemap: 'inline',
+        sourcemap: true,
         plugins: [
-          // terser()
+          terser()
         ]
       }
     ],
@@ -106,11 +106,13 @@ export default [
     output: [
       {
         file: join(rootDir, pkgJson.exports['./esm-browser-bundle-nomin']),
-        format: 'es'
+        format: 'es',
+        sourcemap: true
       },
       {
         file: join(rootDir, pkgJson.exports['./esm-browser-bundle']),
         format: 'es',
+        sourcemap: true,
         plugins: [terser()]
       },
       {
@@ -135,8 +137,7 @@ export default [
         preventAssignment: true
       }),
       rollupPluginTs({
-        ...tsPluginOptions,
-        sourceMap: false
+        ...tsPluginOptions
       }),
       commonjs({ extensions: ['.js', '.jsx'] }),
       json(),
@@ -149,9 +150,9 @@ export default [
       {
         file: join(rootDir, pkgJson.exports['.'].node.import.default),
         format: 'es',
-        sourcemap: 'inline',
+        sourcemap: true,
         plugins: [
-          // terser()
+          terser()
         ]
       }
     ],
@@ -187,9 +188,9 @@ export default [
         exports: 'auto',
         interop: 'auto',
         dynamicImportInCjs: false,
-        sourcemap: 'inline',
+        sourcemap: true,
         plugins: [
-          // terser()
+          terser()
         ]
       }
     ],

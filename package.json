@@ -23,10 +23,6 @@
   "exports": {
     ".": {
       "node": {
-        "module": {
-          "types": "./dist/index.d.ts",
-          "default": "./dist/esm/index.node.js"
-        },
         "import": {
           "types": "./dist/index.d.ts",
           "default": "./dist/esm/index.node.js"
@@ -146,33 +142,33 @@
     }
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.2",
-    "@rollup/plugin-inject": "^5.0.3",
-    "@rollup/plugin-json": "^6.0.0",
-    "@rollup/plugin-multi-entry": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-replace": "^5.0.1",
-    "@rollup/plugin-terser": "^0.4.0",
-    "@rollup/plugin-typescript": "^11.1.0",
-    "@types/chai": "^4.2.22",
-    "@types/mocha": "^10.0.0",
-    "c8": "^8.0.0",
-    "chai": "^4.3.3",
-    "dotenv": "^16.0.3",
-    "glob": "^10.0.0",
-    "json5": "^2.2.0",
-    "minimatch": "^9.0.0",
-    "mocha": "^10.0.0",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-inject": "^5.0.5",
+    "@rollup/plugin-json": "^6.0.1",
+    "@rollup/plugin-multi-entry": "^6.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.5",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/chai": "^4.3.10",
+    "@types/mocha": "^10.0.4",
+    "c8": "^8.0.1",
+    "chai": "^4.3.10",
+    "dotenv": "^16.3.1",
+    "glob": "^10.3.10",
+    "json5": "^2.2.3",
+    "minimatch": "^9.0.3",
+    "mocha": "^10.2.0",
     "npm-run-all": "^4.1.5",
-    "pirates": "^4.0.1",
-    "puppeteer": "^21.3.1",
-    "rimraf": "^5.0.0",
-    "rollup": "^3.20.2",
-    "rollup-plugin-dts": "^6.0.2",
+    "pirates": "^4.0.6",
+    "puppeteer": "^21.5.1",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.3.0",
+    "rollup-plugin-dts": "^6.1.0",
     "ts-standard": "^12.0.2",
-    "tslib": "^2.3.1",
-    "typedoc": "^0.25.1",
-    "typedoc-plugin-markdown": "^3.16.0",
-    "typescript": "^5.2.2"
+    "tslib": "^2.6.2",
+    "typedoc": "^0.25.3",
+    "typedoc-plugin-markdown": "^3.17.1",
+    "typescript": "^5.0.0"
   }
 }

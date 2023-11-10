@@ -1,5 +1,6 @@
 const path = require('path')
 const fs = require('fs')
+const { glob } = require('glob')
 
 const ts = require('typescript')
 const json5 = require('json5')
@@ -40,7 +41,8 @@ function renameJsToMjs (dir, fileList = []) {
         const dstFile = path.join(dir, `${filename}.mjs`)
         fs.renameSync(srcFile, dstFile)
         const fileContents = fs.readFileSync(dstFile, 'utf8')
-        const updatedFileContents = fileContents.replace(/(require\([`'"])(\..*[^.]{5})([`'"])/g, '$1$2.mjs$3')
+
+        const updatedFileContents = fileContents.replace(/^(import\s.*from\s['"]\..*?)(\.m?js)?(['"];?)$/mg, '$1.mjs$3')
         fs.writeFileSync(dstFile, updatedFileContents, { encoding: 'utf8' })
       }
     }
@@ -132,22 +134,19 @@ class TestsBuilder extends Builder {
 
     const tsConfig = json5.parse(fs.readFileSync(this.tsConfigPath, 'utf8'))
 
-    if (testFiles.length > 0) {
-      delete tsConfig.files
-      tsConfig.include = ['build/typings/**/*.d.ts'].concat(testFiles)
-      for (let i = 0; i < testFiles.length; i++) {
-        this.testFilesChecksums[testFiles[i]] = fileChecksum(testFiles[i])
-      }
-    } else {
-      tsConfig.include = ['build/typings/**/*.d.ts', 'test/**/*', 'src/ts/**/*.spec.ts', 'src/**/*.test.ts']
-    }
-    tsConfig.exclude = ['src/ts/**/!(*.spec|*.test).ts']
+    delete tsConfig.include
+
+    tsConfig.files = (testFiles.length > 0) ? testFiles : await glob("['test/**/*', 'src/ts/**/*.spec.ts', 'src/**/*.test.ts']")
+    tsConfig.files.push('build/typings/globals.d.ts')
+
+    tsConfig.files.forEach(file => {
+      this.testFilesChecksums[file] = fileChecksum(file)
+    })
 
     if (this.commonjs) {
-      tsConfig.compilerOptions.module = 'commonjs'
+      tsConfig.compilerOptions.module = 'NodeNext'
+      tsConfig.compilerOptions.moduleResolution = 'NodeNext'
     }
-    // "noResolve": true
-    // tsConfig.compilerOptions.noResolve = true
 
     // we don't need declaration files
     tsConfig.compilerOptions.declaration = false
@@ -161,7 +160,12 @@ class TestsBuilder extends Builder {
     tsConfig.compilerOptions.rootDir = '.'
 
     // Removed typeroots (it causes issues)
-    tsConfig.compilerOptions.typeRoots = undefined
+    delete tsConfig.compilerOptions.typeRoots
+
+    // Update paths to the compiled version (so that we do not compile it again)
+    tsConfig.compilerOptions.paths = {
+      '#pkg': ['./dist/index.d.ts']
+    }
 
     tsConfig.compilerOptions.outDir = path.isAbsolute(this.tempDir) ? path.relative(rootDir, this.tempDir) : this.tempDir
 
